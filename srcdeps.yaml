@@ -15,4 +15,13 @@ configModelVersion: 2.3
 skip: false
 
 repositories:
-# Set up repositories to be included in the build here        
+  org.wildfly.core:
+    includes:
+    - org.wildfly.core
+    urls:
+    - git:git@github.com:hkalina/wildfly-core.git
+    buildArguments:
+    - -Dcheckstyle.skip
+    - -Denforcer.skip
+    buildVersionPattern: .*-SNAPSHOT
+    buildRef: WFCORE-3832
